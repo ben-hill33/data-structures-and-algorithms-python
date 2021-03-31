@@ -54,6 +54,10 @@ AGORITHM BreadthFirst(vertex)
 7. Repeat until queue is empty
 8. Once while loop continues, this will return a list of nodes in the order they were traversed.
 
+### Big O
+- Time - O(1) since every vertex and edge will be explored in the worst case
+- Space - O(1) will be the same as time for the same reasons
+
 ## Structure and Testing
 Utilize the Single-responsibility principle: any methods you write should be clean, reusable, abstract component parts to the whole challenge. You will be given feedback and marked down if you attempt to define a large, complex algorithm in one function definition.
 
