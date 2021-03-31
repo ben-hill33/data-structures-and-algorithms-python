@@ -55,8 +55,9 @@ AGORITHM BreadthFirst(vertex)
 8. Once while loop continues, this will return a list of nodes in the order they were traversed.
 
 ### Big O
-- Time - O(1) since every vertex and edge will be explored in the worst case
-- Space - O(1) will be the same as time for the same reasons
+Quadratic - every element in the collection needs to be compared to every other element, nested loop
+- Time - O(n^2) since every vertex and edge will be explored in the worst case
+- Space - O(n^2) the algorithm call will happen after the nested loop is done  
 
 ## Structure and Testing
 Utilize the Single-responsibility principle: any methods you write should be clean, reusable, abstract component parts to the whole challenge. You will be given feedback and marked down if you attempt to define a large, complex algorithm in one function definition.
