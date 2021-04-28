@@ -12,7 +12,7 @@ class LinkedList:
     Turns output into a human readable string list
 
     Returns:
-        [string]: [{HEAD} -> {NODE} -> NONE]
+        string: {HEAD} -> {NODE} -> NONE
     """
     output = ""
     current = self.head_node
