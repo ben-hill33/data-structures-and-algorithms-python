@@ -1,10 +1,10 @@
 # Trees Implementation
 ## Author: Ben Hill
 
-### Challenge
-- [Click here](./tree.py) for Binary Tree and Binary Search Tree with no built in methods
+- [Click here](./tree.py) for Binary Tree and Binary Search Tree with no built in methods that solves the challenge below
 - [Click here](tree_two.py) for Binary Tree with built in methods
 - [Click here](adventure.py) for an adventure game using a Binary Tree (courtesy of codecademy)
+### Challenge
 
 - Create a Node class that has properties for the value stored in the node, the left child node, and the right child node.
 - Create a BinaryTree class
