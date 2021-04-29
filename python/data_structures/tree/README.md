@@ -2,7 +2,9 @@
 ## Author: Ben Hill
 
 ### Challenge
-- [Click here](./tree.py) for code implementation
+- [Click here](./tree.py) for Binary Tree and Binary Search Tree with no built in methods
+- [Click here](tree_two.py) for Binary Tree with built in methods
+- [Click here](adventure.py) for an adventure game using a Binary Tree (courtesy of codecademy)
 
 - Create a Node class that has properties for the value stored in the node, the left child node, and the right child node.
 - Create a BinaryTree class
@@ -14,7 +16,7 @@
 - Define a method named contains that accepts a value, and returns a boolean indicating whether or not the value is in the tree at least once.
 
 Write tests to prove the following functionality:
-- [Click here](../../tests/test_tree.py) for tests
+- [Click here](../../tests/test_tree.py) for tests (tests are only for no built in methods version)
 
 - Can successfully instantiate an empty tree
 - Can successfully instantiate a tree with a single root node
