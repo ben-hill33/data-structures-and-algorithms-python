@@ -41,14 +41,24 @@ class BST:
     else:
       return None
 
+  def depth_first_traversal(self):
+    if self.left is not None:
+      self.left.depth_first_traversal()
+    print(f'Depth={self.depth}, Value={self.value}')
+    if self.right is not None:
+      self.right.depth_first_traversal()
 
 
-root = BST(100)
-root.insert(50)
-root.insert(125)
-root.insert(75)
-root.insert(25)
 
-print(root.get_node_by_value(75).value, "is in BST")
-print(root.get_node_by_value(55))
+tree = BST(48)
+tree.insert(24)
+tree.insert(55)
+tree.insert(26)
+tree.insert(38)
+tree.insert(56)
+tree.insert(74)
+
+# print(root.get_node_by_value(75).value, "is in BST")
+# print(root.get_node_by_value(55))
+tree.depth_first_traversal()
 
