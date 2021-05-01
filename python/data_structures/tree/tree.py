@@ -106,19 +106,19 @@ class BST(BinaryTree):
         def search_tree(node):
             # if value < node.value, go left
             if value < node.value:
-                # if no left child, append new node
+                # if left child doesnt exist, append new node
                 if not node.left:
                     node.left = new_node
                 else:
-                    # if left child, look left again
+                    # if left child does exist, begin traversing subtree
                     search_tree(node.left)
             # if value is less than node.value, go right
             elif value > node.value:
-                # if no right child, append new node
+                # if right child doesn't exist, append new node
                 if not node.right:
                     node.right = new_node
                 else:
-                    # if right child, look right again
+                    # if right child does exist, look right again
                     search_tree(node.right)
 
         search_tree(self.root)
