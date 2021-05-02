@@ -1,6 +1,9 @@
 # Stacks and Queues
-- [Click here](./stacks_and_queues.py) for code implementation.
-- [Click here](../../tests/test_stacks_and_queues.py) for unit tests
+- [Click here](./stacks_and_queues.py) for code implementation for the challenge below
+- [Click here](../../tests/test_stacks_and_queues.py) for unit tests for challenge below
+- [Click here](stack_queue/queue.py) for another version of a Queue
+- [Click here](stack_queue/stack.py) for another version of a Stack
+- [Click here](stack_queue/tower_game.py) for my Towers of Hanoi game using my Stack data structure!!
 - [Back to Table of Contents](../README.md)
 
 ## Challenge
@@ -39,9 +42,3 @@
 1. Can successfully empty a queue after multiple dequeues
 1. Can successfully instantiate an empty queue
 1. Calling dequeue or peek on empty queue raises exception
-
-## Approach & Efficiency
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
-
-## API
-<!-- Description of each method publicly available to your Stack and Queue-->
