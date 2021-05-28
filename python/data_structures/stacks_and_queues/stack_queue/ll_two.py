@@ -1,24 +1,33 @@
 class Node:
-  def __init__(self, value, next=None):
+  def __init__(self, value):
     self.value = value
-    self.next = next
+    self.next = None
 
 class LinkedList:
-  def __init__(self, value=None):
-    self.head_node = Node(value)
+  def __init__(self):
+    self.head_node = None
 
-  def __str__(self):
-    """
-    Turns output into a human readable string list
+  # def __str__(self):
+  #   """
+  #   Turns output into a human readable string list
 
-    Returns:
-        string: {HEAD} -> {NODE} -> NONE
-    """
+  #   Returns:
+  #       string: {HEAD} -> {NODE} -> NONE
+  #   """
+  #   output = ""
+  #   current = self.head_node
+  #   while current:
+  #     if current.value != None:
+  #       output += f"{{ {current.value} }} -> "
+  #     current = current.next
+  #   return output + "{ None }"
+
+  def print_list(self):
     output = ""
     current = self.head_node
     while current:
-      if current.value != None:
-        output += f"{{ {current.value} }} -> "
+      output += f"{{ {current.value} }} -> "
+      print(current.value, end=" -> ")
       current = current.next
     return output + "{ None }"
 
@@ -43,7 +52,7 @@ class LinkedList:
       current = current.next
     return False
 
-  def add_node_beginning(self, new_value):
+  def add_node(self, new_value):
     """
     Adds a node to the linked list at the head node
 
@@ -57,12 +66,18 @@ class LinkedList:
     """
     new_node = Node(new_value)
 
-    if self.head_node:
-      new_node.next = self.head_node
-    self.head_node = new_node
+    if self.head_node is None:
+      self.head_node = new_node
+      return
+    
+    last = self.head_node
+    while last.next:
+      last = last.next
+    last.next = new_node
 
 
-ll = LinkedList(5)
-print(ll)
-ll.add_node_beginning(4)
-print(ll)
+
+# ll = LinkedList(5)
+# print(ll)
+# ll.add_node(4)
+# print(ll)
