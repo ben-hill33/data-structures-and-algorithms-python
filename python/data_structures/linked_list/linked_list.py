@@ -1,7 +1,7 @@
 class Node:
-    def __init__(self, value, next=None):
+    def __init__(self, value):
         self.value = value
-        self.next = next
+        self.next = None
 
 
 class LinkedList:
@@ -12,7 +12,7 @@ class LinkedList:
         output = ""
         current = self.head
         while current is not None:
-            output += f"{{ {current.value} }} -> "
+            output += f"{{ {current} }} -> "
             current = current.next
         return output + "NONE"
 
@@ -93,12 +93,12 @@ class LinkedList:
         return current.value
 
 
-if __name__ == "__main__":
-    new_node = Node(1)
-    new_ll = LinkedList()
-    print(new_ll)
+# if __name__ == "__main__":
+    # new_node = Node(1)
+    # new_ll = LinkedList()
+    # print(new_ll)
 
-    LL = LinkedList(new_node)
+    # LL = LinkedList(new_node)
 #   link_list.insert(2)
 #   link_list.insert(9)
 #   link_list.insert(8)

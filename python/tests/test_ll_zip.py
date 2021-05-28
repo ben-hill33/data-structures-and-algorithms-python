@@ -1,5 +1,4 @@
-# from data_structures.linked_list.linked_list import Node, LinkedList
-from ll_zip.ll_zip import *
+# from ll_zip.ll_zip import *
 
 # why are these tests passing without importing pytest?
 

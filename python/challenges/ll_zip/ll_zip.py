@@ -1,4 +1,4 @@
-from data_structures.linked_list.linked_list import Node, LinkedList
+from linked_list.linked_list import *
 
 
 def merge_lists(ll_1, ll_2):
@@ -26,27 +26,28 @@ def merge_lists(ll_1, ll_2):
   return ll_1
 
 
-if __name__ == "__main__":
-    ll_1 = LinkedList()
-    ll_2 = LinkedList()
+# if __name__ == "__main__":
+ll_1 = LinkedList()
+ll_2 = LinkedList()
 
-    list1 = [[1], [3], [5], [7]]
-    list2 = [[2], [4], [6], [8]]
+list1 = [[1], [3], [5], [7]]
+list2 = [[2], [4], [6], [8]]
 
 
-    ll_1.insert(list1[3])
-    ll_1.insert(list1[2])
-    ll_1.insert(list1[1])
-    ll_1.insert(list1[0])
+ll_1.insert(list1[3])
+ll_1.insert(list1[2])
+ll_1.insert(list1[1])
+ll_1.insert(list1[0])
 
-    ll_2.insert(list2[3])
-    ll_2.insert(list2[2])
-    ll_2.insert(list2[1])
-    ll_2.insert(list2[0])
+ll_2.insert(list2[3])
+ll_2.insert(list2[2])
+ll_2.insert(list2[1])
+ll_2.insert(list2[0])
 
-    print('First List:', ll_1)
-    print('Second List:', ll_2)
-    
-    merge = merge_lists(ll_1, ll_2)
-    print('Magic happens, aaaaand:', merge)
+print('First List:', ll_1)
+print('Second List:', ll_2)
+
+merge = merge_lists(ll_1, ll_2)
+print('Magic happens, aaaaand:', merge)
+
 
