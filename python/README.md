@@ -15,8 +15,10 @@
 
 - **Data Structures**
   - [Linked List](data_structures/linked_list/README.md)
-  - [Trees](data_structures/tree/README.md)
   - [Stacks and Queues](data_structures/stacks_and_queues/README.md)
+  - [Hash Table](data_structures/hashtable/README.md)
+  - [Trees](data_structures/tree/README.md)
+  - [Graph](data_structures/graph/README.md)
 
 ### Folder and Challenge Setup
 
