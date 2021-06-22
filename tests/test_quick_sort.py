@@ -1,4 +1,4 @@
-from quick_sort.quick_sort import quick_sort
+from algorithms.quick_sort.quick_sort import quick_sort
 
 
 def test_sort_random():

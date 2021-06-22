@@ -1,5 +1,4 @@
-import pytest
-from insertion_sort.insertion_sort import insertion_sort
+from algorithms.insertion_sort.insertion_sort import insertion_sort
 
 
 def test_instantiate_empty():

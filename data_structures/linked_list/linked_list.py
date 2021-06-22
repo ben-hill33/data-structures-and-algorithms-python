@@ -1,121 +1,114 @@
 class Node:
-    def __init__(self, value):
+    def __init__(self, value, next=None):
         self.value = value
-        self.next = None
+        self.next = next
+
+
+class TargetError(ValueError):
+    pass
 
 
 class LinkedList:
-    def __init__(self, head=None):
+    """
+    Singly Linked List
+    """
+    def __init__(self, head=None, values=None):
         self.head = head
 
+        if values:
+            for value in reversed(values):
+                self.insert(value)
+
     def __str__(self):
+        """
+        Gives stringy format to list
+        """
         output = ""
         current = self.head
-        while current is not None:
+        while current:
             output += f"{{ {current} }} -> "
             current = current.next
         return output + "NONE"
 
     def insert(self, value):
-        node = Node(value)
-
-        if self.head is not None:
-            node.next = self.head
-        self.head = node
+        """
+        Adds value to head, or beginning, of list
+        """
+        self.head = Node(value, self.head)
 
     def includes(self, value):
+        """
+        returns True/False if value found in list
+        """
         current = self.head
 
-        while current is not None:
+        while current:
             if current.value == value:
                 return True
             current = current.next
-            return False
+        return False
 
     def append(self, value):
+        """
+        Adds value to end of list
+        """
         node = Node(value)
 
         if not self.head:
             self.head = node
-        else:
-            current = self.head
-            while current.next:
-                current = current.next
-            current.next = node
-        # return node.next
+            return
+        current = self.head
+
+        while current.next:
+            current = current.next
+        current.next = node
 
     def insert_before(self, value, new_val):
-        if not self.head:
-            raise Exception("List is empty!")
+        """
+        Inserts new value before the given value
+        """
+        current = self.head
 
-        previous = None
+        if current and current.value == value:
+            self.head = Node(new_val, self.head)
+            return
+        
+        while current and current.next:
+            if current.next.value == value:
+                node = Node(new_val, current.next)
+                current.next = node
+                return
+            current = current.next
+        raise TargetError(f"{value} not in list")
 
+    def insert_after(self, value, new_val):
+        """
+        Inserts new value after the given value
+        """
         current = self.head
         while current:
             if current.value == value:
-                node = Node(new_val)
-                node.next = current
-                if previous:
-                    previous.next = node
-                else:
-                    self.head = node
-            previous = current
-            current = current.next
-        return self.head
-
-    def insert_after(self, value, new_val):
-        current = self.head
-        after = None
-        while current.value:
-            if current.value == value:
-                node = Node(new_val)
-                after = current.next
+                node = Node(new_val, current.next)
                 current.next = node
-                node.next = after
-            return current
-        current = current.next
+            current = current.next
+        raise TargetError(f"{value} not in list")
         # return self.head
 
     def kth_number(self, k):
         current = self.head
 
+        previous = None
+
         counter = 0
-        while current is not None:
+        while current:
             current = current.next
-            counter += 1
+            if previous:
+                previous = previous.next
+            elif counter == k:
+                previous = self.head
+            else:
+                counter += 1
 
-        if k > counter:
-            print(f"{k} is not in Linked List!")
-            return
-        current = self.head
-        for i in range(0, counter - k):
-            current = current.next
-        return current.value
-
-
-# if __name__ == "__main__":
-    # new_node = Node(1)
-    # new_ll = LinkedList()
-    # print(new_ll)
-
-    # LL = LinkedList(new_node)
-#   link_list.insert(2)
-#   link_list.insert(9)
-#   link_list.insert(8)
-#   link_list.append(3)
-#   link_list.append(4)
-#   link_list.append(5)
-#   link_list.insert_before(8, 15)
-#   print(link_list)
-#   link_list.insert_before(4, 22)
-#   print(link_list)
-#   link_list.insert_before(5, 45)
-#   print(link_list)
-#   link_list.insert_after(2, 77)
-#   print(link_list)
-#   link_list.insert_after(5, 88)
-#   print(link_list)
-#   print(link_list.kth_number(4))
-# print(link_list.includes(3))
-# print(link_list.includes(4))
-# print(new_ll1)
+        if not previous:
+            raise TargetError(f"k is not in Linked List!")
+        return previous.value

@@ -1,16 +1,6 @@
-# from ll_zip.ll_zip import *
+from challenges.ll_zip.ll_zip import merge_lists
 
-# why are these tests passing without importing pytest?
 
-def test_instantiate_one():
-  tester = LinkedList()
-  assert tester.head == None
-
-def test_instantiate_two():
-  test_ll_1 = LinkedList()
-  test_ll_2 = LinkedList()
-  assert test_ll_1.head == None
-  assert test_ll_2.head == None
 
 def test_insert():
   tester = LinkedList()
