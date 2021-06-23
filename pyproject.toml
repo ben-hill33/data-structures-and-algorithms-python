@@ -11,7 +11,6 @@ flake8 = "^3.9.2"
 black = "^21.5b2"
 pytest = "^6.2.4"
 pytest-watch = "^4.2.0"
-pytest-mock = "^3.6.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.4"

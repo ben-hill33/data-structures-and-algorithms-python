@@ -15,3 +15,25 @@ class HashMap:
         key_bytes = key.encode()
         hash_code = sum(key_bytes)
         return hash_code
+
+    def compressor(self, hash_code):
+        """
+        Transforms hashed values into useful indices.
+        """
+        return hash_code % self.array_size
+
+    def assign(self, key, value):
+        """
+        Assigns HashMap's array indices to compressor() and hash() methods.
+        """
+        array_index = self.compressor(self.hash(key))
+        self.array[array_index] = value
+
+    def retrieve(self, key):
+        """
+        Returns the value of a given key.
+        """
+        array_index = self.compressor(self.hash(key))
+        return self.array[array_index]
+
+
