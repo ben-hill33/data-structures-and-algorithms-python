@@ -24,13 +24,22 @@ def test_compressor_method_exists():
     assert has_method == True
 
 
-def test_assign_method_exists():
+def test_add_method_exists():
     life = HashMap(0)
-    has_method = hasattr(life, 'assign')
+    has_method = hasattr(life, 'add_key_value')
     assert has_method == True
 
 
 def test_retrieve_method_exists():
     life = HashMap(0)
-    has_method = hasattr(life, 'retrieve')
+    has_method = hasattr(life, 'retrieve_keys_value')
     assert has_method == True
+
+
+def test_can_add_key_value_pair():
+    hash_map = HashMap(20)
+    hash_map.add_key_value("Name", "Benjammin")
+    expected = "Benjammin"
+    actual = hash_map.retrieve_keys_value("Name")
+    assert actual == expected
+

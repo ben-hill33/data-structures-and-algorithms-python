@@ -22,14 +22,14 @@ class HashMap:
         """
         return hash_code % self.array_size
 
-    def assign(self, key, value):
+    def add_key_value(self, key, value):
         """
         Assigns HashMap's array indices to compressor() and hash() methods.
         """
         array_index = self.compressor(self.hash(key))
         self.array[array_index] = value
 
-    def retrieve(self, key):
+    def retrieve_keys_value(self, key):
         """
         Returns the value of a given key.
         """
