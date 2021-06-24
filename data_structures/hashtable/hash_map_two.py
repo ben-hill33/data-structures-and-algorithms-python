@@ -27,7 +27,15 @@ class HashMap:
         Assigns HashMap's array indices to compressor() and hash() methods.
         """
         array_index = self.compressor(self.hash(key))
-        self.array[array_index] = value
+        current_val = self.array[array_index]
+
+        if current_val is None:
+            self.array[array_index] = [key, value]
+            return
+        if current_val[0] == key:
+            self.array[array_index] = [key, value]
+            return
+        return
 
     def retrieve_keys_value(self, key):
         """

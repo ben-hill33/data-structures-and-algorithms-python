@@ -36,7 +36,7 @@ def test_retrieve_method_exists():
     assert has_method == True
 
 
-def test_can_add_key_value_pair():
+def test_add_key_value_():
     hash_map = HashMap(20)
     hash_map.add_key_value("Name", "Benjammin")
     expected = "Benjammin"
