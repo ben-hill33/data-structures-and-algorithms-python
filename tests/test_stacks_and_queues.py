@@ -2,10 +2,10 @@ from data_structures.stacks_and_queues.stacks_and_queues import Stack, Queue, In
 
 import pytest
 
-# Can successfully instantiate an empty stack
+
 def test_instantiate_stack():
-  stack = Stack()
-  assert stack.top == None
+    stack = Stack()
+    assert stack.top == None
 
 # Can successfully push onto a stack
 def test_push_onto_stack():
