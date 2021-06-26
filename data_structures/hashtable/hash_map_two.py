@@ -44,4 +44,10 @@ class HashMap:
         array_index = self.compressor(self.hash(key))
         return self.array[array_index]
 
+hash_map = HashMap(20)
+hash_map.add_key_value("Name", "Ben")
+hash_map.add_key_value("Name", "Claire")
+hash_map.add_key_value("Ninja Turles", "Leondardo")
+hash_map.add_key_value("Teacher", "Roger")
+
 
