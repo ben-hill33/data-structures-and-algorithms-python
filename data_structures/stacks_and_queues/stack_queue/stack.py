@@ -1,4 +1,4 @@
-from node import Node
+from data_structures.stacks_and_queues.stack_queue.node import Node
 
 class Stack:
   def __init__(self, name):
@@ -90,7 +90,7 @@ class Stack:
 # # Outputs empty print statement
 # pizza_stack.push("pizza #7")
 
-# Delivering pizzas from the top of the stack down
+# # Delivering pizzas from the top of the stack down
 # print(f"The first pizza to deliver is {pizza_stack.peek()}")
 # pizza_stack.pop()
 # pizza_stack.pop()

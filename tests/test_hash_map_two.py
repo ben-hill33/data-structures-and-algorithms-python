@@ -36,10 +36,25 @@ def test_retrieve_method_exists():
     assert has_method == True
 
 
-def test_add_key_value_():
+def test_add_key_value():
     hash_map = HashMap(20)
     hash_map.add_key_value("Name", "Benjammin")
     expected = "Benjammin"
     actual = hash_map.retrieve_keys_value("Name")
     assert actual == expected
+
+
+def test_add_retrieve_multiple():
+    hash_map = HashMap(20)
+    hash_map.add_key_value("Name", "Benjammin")
+    hash_map.add_key_value("Pizza", "Pepperoni")
+    hash_map.add_key_value("Rocks", "Limestone")
+    expected = "Benjammin"
+    expected = "Pepperoni"
+    expected = "Limestone"
+    actual = hash_map.retrieve_keys_value("Name")
+    actual = hash_map.retrieve_keys_value("Pizza")
+    actual = hash_map.retrieve_keys_value("Rocks")
+    assert actual == expected
+
 
