@@ -79,11 +79,3 @@ class HashMap:
             
             retrieval_collisions += 1
         return
-
-hash_map = HashMap(20)
-hash_map.add_key_value("Name", "Ben")
-hash_map.add_key_value("Name", "Claire")
-hash_map.add_key_value("Ninja Turles", "Leondardo")
-hash_map.add_key_value("Teacher", "Roger")
-
-
