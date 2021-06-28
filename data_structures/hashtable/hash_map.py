@@ -1,7 +1,5 @@
 from data_structures.hashtable.linked_list import LinkedList
 
-# from linked_list import LinkedList
-
 
 class HashTable:
     def __init__(self, size):
