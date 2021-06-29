@@ -1,26 +1,9 @@
-class Node:
-  def __init__(self, value):
-    self.value = value
-    self.next = None
+from data_structures.linked_list.node import Node
+
 
 class LinkedList:
-  def __init__(self):
-    self.head_node = None
-
-  # def __str__(self):
-  #   """
-  #   Turns output into a human readable string list
-
-  #   Returns:
-  #       string: {HEAD} -> {NODE} -> NONE
-  #   """
-  #   output = ""
-  #   current = self.head_node
-  #   while current:
-  #     if current.value != None:
-  #       output += f"{{ {current.value} }} -> "
-  #     current = current.next
-  #   return output + "{ None }"
+  def __init__(self, head_node=None):
+    self.head_node = head_node
 
   def print_list(self):
     output = ""
@@ -28,7 +11,7 @@ class LinkedList:
     while current:
       output += f"{{ {current.value} }} -> "
       print(current.value, end=" -> ")
-      current = current.next
+      current = current.next_node
     return output + "{ None }"
 
   def includes(self, value):
@@ -49,7 +32,7 @@ class LinkedList:
     while current:
       if current.value == value:
         return True
-      current = current.next
+      current = current.next_node
     return False
 
   def add_node(self, new_value):
@@ -71,13 +54,12 @@ class LinkedList:
       return
     
     last = self.head_node
-    while last.next:
-      last = last.next
-    last.next = new_node
+    while last.next_node:
+      last = last.next_node
+    last.next_node = new_node
 
-
-
-# ll = LinkedList(5)
-# print(ll)
-# ll.add_node(4)
-# print(ll)
+ll = LinkedList()
+ll.add_node(1)
+ll.add_node(2)
+ll.add_node(3)
+ll.add_node("Four")
