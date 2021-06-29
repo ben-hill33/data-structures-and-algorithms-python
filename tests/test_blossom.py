@@ -1,3 +1,4 @@
+from data_structures.hashtable.blossom.ll import LinkedList
 from data_structures.hashtable.blossom.blossom import Blossom
 
 
