@@ -1,7 +1,7 @@
-# Write a function factorial that, given an positive integer as input, returns the product of every integer from 1 up to the input. 
+# Write a function factorial that, given an positive integer as input, returns the product of every integer from 1 up to the input.
 # If the input is less than 2, return 1
 # Evaluate big O runtime of the function:
-    # big O: O(n!) Factorial, adding a loop for every element 
+    # big O: O(n!) Factorial, adding a loop for every element
 
 def factorial(n):
 # BASE CASE: Make a check that doesn't need to use recursion
@@ -11,7 +11,8 @@ def factorial(n):
     if n >= 2:
         print(f"Recursing at {n}")
         return n * factorial(n-1)
-
+# IF INPUT IS TOO LARGE, STACK OVERFLOW WILL OCCUR, CREATING RECURSION ERROR
+# This happens because the call stack can only handle so many executions before getting bogged down for space.
 print(factorial(12))
 
 # EXECUTION CONTEXT:
@@ -24,4 +25,3 @@ print(factorial(12))
 # Step seven: Repeat steps three through six until n = 1
 # Step eight: Program reads print method and prints the value of n to the console, which should be one.
 # Step nine: Program returns one to the console as the base case has been reached, and terminates
-
