@@ -1,6 +1,6 @@
 name: test
 
-on: push
+on: pull_request
 
 jobs:
   linting:
@@ -22,10 +22,9 @@ jobs:
       #----------------------------------------------
       #          install and run linters      
       #----------------------------------------------
-      - run: python -m pip install black isort
+      - run: python -m pip install flake8
       - run: |
-          black . --check
-          isort .
+          flake8 .
   test:
     needs: linting
     strategy:
