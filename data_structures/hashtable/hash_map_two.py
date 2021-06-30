@@ -64,9 +64,9 @@ class HashMap:
 
         if possible_value[0] == key:
             return possible_value[1]
-        
+
         retrieval_collisions = 1
-        
+
         while possible_value[0] != key:
             new_hash_code = self.hash(key, retrieval_collisions)
             retrieve_index = self.compressor(new_hash_code)
@@ -76,6 +76,6 @@ class HashMap:
                 return None
             if possible_value[0] == key:
                 return possible_value[1]
-            
+
             retrieval_collisions += 1
         return

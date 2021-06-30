@@ -1,11 +1,10 @@
-from data_structures.hashtable.blossom.ll import LinkedList
-from data_structures.hashtable.blossom.blossom import Blossom
+from data_structures.hashtable.blossom.script import Blossom
 
 
 def test_blossom_proof_of_life():
     blossom = Blossom(0)
     assert blossom.array == []
-    
+
 
 def test_hasattr_method_returns_false_when_given_fake_name():
     life = Blossom(0)
