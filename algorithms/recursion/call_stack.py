@@ -24,4 +24,4 @@ def sum_to_one(n):
     return result, call_stack
 
 
-print(f"call stack {sum_to_one(5)}")
+print(f"call stack {sum_to_one(2)}")
