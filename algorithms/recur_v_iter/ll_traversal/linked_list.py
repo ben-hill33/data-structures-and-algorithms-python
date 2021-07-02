@@ -1,6 +1,12 @@
 from algorithms.recur_v_iter.ll_traversal.node import Node
 
+
 class LinkedList:
+    """
+    Finds current and next nodes starting at the head node
+
+    Can insert at beginning, remove, and find nodes iteratively and recursively
+    """
     def __init__(self, value=None):
         self.head_node = Node(value)
 
@@ -19,7 +25,7 @@ class LinkedList:
             if current_node.get_value() != None:
                 string_list += str(current_node.get_value()) + "\n"
             current_node = current_node.get_next_node()
-        return string_list
+            return string_list
 
     def remove_node(self, value_to_remove):
         current_node = self.get_head_node()
@@ -40,5 +46,15 @@ class LinkedList:
         while current_node:
             if current_node.value == value:
                 return current_node
-            current_node = current_node.get_next_node()
+        current_node = current_node.get_next_node()
+
         return None
+
+    def find_node_recursively(self, value):
+        current_node = self.head_node
+        if current_node == None:
+            return None
+        elif current_node.value == value:
+            return current_node
+        else:
+            return self.find_node_recursively(value, current_node.get_next_node())
