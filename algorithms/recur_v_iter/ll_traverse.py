@@ -1,4 +1,4 @@
-from algorithms.recur_v_iter.ll_traversal.linked_list import LinkedList
+from algorithms.recur_v_iter.linked_list import LinkedList
 
 my_list = LinkedList()
 

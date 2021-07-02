@@ -1,4 +1,4 @@
-from algorithms.recur_v_iter.ll_traversal.node import Node
+from algorithms.recur_v_iter.node import Node
 
 
 class LinkedList:
