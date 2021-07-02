@@ -4,13 +4,13 @@
     # big O: O(n!) Factorial, adding a loop for every element
 
 def factorial(n):
-# BASE CASE: Make a check that doesn't need to use recursion
+    # BASE CASE: Make a check that doesn't need to use recursion
     if n <= 1:
         print(f"BASE CASE: {n}")
         return 1
     if n >= 2:
         print(f"Recursing at {n}")
-        return n * factorial(n-1)
+        return n * factorial(n - 1)
 # IF INPUT IS TOO LARGE, STACK OVERFLOW WILL OCCUR, CREATING RECURSION ERROR
 # This happens because the call stack can only handle so many executions before getting bogged down for space.
 print(factorial(12))

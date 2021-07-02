@@ -37,4 +37,3 @@ def build_bst(my_list):
 
 sorted_list = [12, 13, 14, 15, 16, 17, 18]
 bst = build_bst(sorted_list)
-

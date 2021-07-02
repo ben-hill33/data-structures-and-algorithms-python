@@ -20,7 +20,7 @@ def power_set(my_list):
     # recursive step: subset without first element
     power_set_without_first = power_set(my_list[1:])
     # subset with first element
-    with_first = [ [my_list[0]] + rest for rest in power_set_without_first]
+    with_first = [[my_list[0]] + rest for rest in power_set_without_first]
     # return combination of the two
     return with_first + power_set_without_first
 
