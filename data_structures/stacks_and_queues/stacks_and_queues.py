@@ -21,7 +21,7 @@ class Stack:
   def is_empty(self):
     if self.top == None:
       return True
-  
+
   def push(self, value):
     node = Node(value)
     node.next = self.top
@@ -39,11 +39,12 @@ class Stack:
       raise InvalidOperationError("Peeking from an empty stack!")
     return self.top.value
 
+
 class Queue:
   def __init__(self, front=None, rear=None):
     self.front = front
     self.rear = rear
-  
+
   def __str__(self):
     output = ''
     current = self.front
@@ -55,7 +56,7 @@ class Queue:
   def enqueue(self, value):
     node = Node(value)
     if self.is_empty():
-      self.front = node 
+      self.front = node
       self.rear = node
     else:
       self.rear.next = node
@@ -89,31 +90,29 @@ class Queue:
       return True
 
 
-if __name__ == "__main__":
-  new_node = Node(1)
-  # stack = Stack()
-  queue = Queue()
-  # print(stack)
-  print(queue)
 
-  # stack.push(2)
-  # stack.push(1)
-  # stack.push('TOP')
-  # print(stack)
+new_node = Node(1)
+# stack = Stack()
+queue = Queue()
+# print(stack)
+print(queue)
 
-  queue.enqueue('FRONT')
-  queue.enqueue(2)
-  queue.enqueue(1)
-  queue.enqueue('BACK')
-  print(queue)
+# stack.push(2)
+# stack.push(1)
+# stack.push('TOP')
+# print(stack)
 
-
-  # stack.pop()
-  # stack.pop()
-  # print(stack)
-  queue.dequeue()
-  print(queue)
-
-  print(queue.peek())
+queue.enqueue('FRONT')
+queue.enqueue(2)
+queue.enqueue(1)
+queue.enqueue('BACK')
+print(queue)
 
 
+# stack.pop()
+# stack.pop()
+# print(stack)
+queue.dequeue()
+print(queue)
+
+print(queue.peek())
