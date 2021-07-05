@@ -1,6 +1,10 @@
-from data_structures.stacks_and_queues.stack_two import Stack, EmptyException
-
 import pytest
+from data_structures.stacks_and_queues.stack_two import (
+    Stack,
+    EmptyException,
+    Queue
+)
+
 
 def test_stack_is_empty():
     stack = Stack()
@@ -103,3 +107,85 @@ def test_peek_returns_top_value():
     expected = 1
     actual = stack.peek()
     assert expected == actual
+
+
+def test_queue_is_empty():
+    q = Queue()
+    expected = True
+    actual = q.is_empty()
+    assert actual == expected
+
+
+def test_queue_adds_one_to_rear():
+    q = Queue()
+    q.enqueue(1)
+    expected = 1
+    actual = q.rear.value
+    assert actual == expected
+
+
+def test_queue_adds_multiple():
+    q = Queue()
+    q.enqueue(1)
+    q.enqueue(2)
+    q.enqueue(3)
+    q.enqueue(4)
+    expected = 4
+    actual = q.rear.value
+    assert actual == expected
+
+
+def test_dequeue_raises_empty_exception_if_queue_is_empty():
+    q = Queue()
+    with pytest.raises(EmptyException) as empty:
+        q.dequeue()
+
+    assert str(empty.value) == "Queue is empty!"
+
+
+def test_dequeue_removes_from_front():
+    q = Queue()
+    q.enqueue(1)
+    q.dequeue()
+    expected = True
+    actual = q.is_empty()
+    assert actual == expected
+
+
+def test_can_empty_queue_after_multiple_dequeue():
+    q = Queue()
+    q.enqueue(1)
+    q.enqueue(2)
+    q.enqueue(3)
+    q.enqueue(4)
+    q.dequeue()
+    q.dequeue()
+    q.dequeue()
+    q.dequeue()
+    expected = True
+    actual = q.is_empty()
+    assert actual == expected
+
+
+def test_isempty_returns_false_if_front_has_value():
+    q = Queue()
+    q.enqueue(1)
+    expected = False
+    actual = q.is_empty()
+    assert actual == expected
+
+
+def test_peek_raises_empty_exception():
+    q = Queue()
+    with pytest.raises(EmptyException) as empty:
+        q.peek()
+
+    assert str(empty.value) == "Queue is empty!"
+
+
+def test_peek_returns_front_value():
+    q = Queue()
+    q.enqueue(1)
+    expected = 1
+    actual = q.peek()
+    assert actual == expected
