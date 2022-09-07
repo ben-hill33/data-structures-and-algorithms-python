@@ -1,4 +1,4 @@
-from data_structures.stacks_and_queues.stack_queue.node import Node
+from data_structures.linked_list.node import Node
 
 class Stack:
   def __init__(self, name):
@@ -9,7 +9,7 @@ class Stack:
     self.size = 0
     self.limit = 1000
     self.name = name
-  
+
   def push(self, value):
     """
     Adds a node to the top of the stack
@@ -78,14 +78,14 @@ class Stack:
 
 
 # # Defining an empty pizza stack
-# pizza_stack = Stack(6)
-# # Adding pizzas as they are ready until we have no more room
-# pizza_stack.push("pizza #1")
-# pizza_stack.push("pizza #2")
-# pizza_stack.push("pizza #3")
-# pizza_stack.push("pizza #4")
-# pizza_stack.push("pizza #5")
-# pizza_stack.push("pizza #6")
+pizza_stack = Stack(6)
+# Adding pizzas as they are ready until we have no more room
+pizza_stack.push("pizza #1")
+pizza_stack.push("pizza #2")
+pizza_stack.push("pizza #3")
+pizza_stack.push("pizza #4")
+pizza_stack.push("pizza #5")
+pizza_stack.push("pizza #6")
 
 # # Outputs empty print statement
 # pizza_stack.push("pizza #7")

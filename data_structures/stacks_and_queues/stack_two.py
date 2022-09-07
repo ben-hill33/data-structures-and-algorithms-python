@@ -18,6 +18,14 @@ class Stack:
     def __init__(self, top=None):
         self.top = top
 
+    def __str__(self):
+        output = ''
+        current = self.top
+        while current is not None:
+            output += f'{{ {current.value} }} -> '
+            current = current.next
+        return output + '\nNONE\n'
+
     def is_empty(self) -> bool:
         """
         Returns boolean indicating whether or not the stack is empty
@@ -69,6 +77,14 @@ class Queue:
         self.front = front
         self.rear = rear
 
+    def __str__(self):
+        output = ''
+        current = self.front
+        while current:
+            output += f'{{ {current.value} }} -> '
+            current = current.next_node
+        return output + 'NONE\n'
+
     def is_empty(self) -> bool:
         """
         Returns boolean indicating whether or not Queue is empty.
@@ -117,3 +133,32 @@ class Queue:
         if self.is_empty():
             raise EmptyException("Queue is empty!")
         return self.front.value
+
+new_node = Node(1)
+
+# stack = Stack()
+# print(stack)
+
+# stack.push(2)
+# stack.push(1)
+# stack.push('TOP')
+# print(stack)
+
+# stack.pop()
+# stack.pop()
+# print(stack)
+
+queue = Queue()
+print(queue)
+
+
+queue.enqueue('FRONT')
+queue.enqueue(2)
+queue.enqueue(1)
+queue.enqueue('BACK')
+print(queue)
+
+queue.dequeue()
+print(queue)
+
+print(queue.peek())
