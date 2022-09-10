@@ -22,8 +22,14 @@ class ArrayList:
         self.__length = self.__length + 1
 
     def remove_at(self, index):
+        # create a reference for the item
+        item = None
+
         # Make sure the index is valid for the current array
         if index >= 0 and index < self.__length:
+            # get the item
+            item = self.__array[index]
+
             # Shift items from the given index up to the
             # end of the array.
             for i in range(index, self.__length-1):
@@ -31,6 +37,8 @@ class ArrayList:
 
             # Update the array's length
             self.__length = self.__length - 1
+
+        return item
 
     def resize(self, new_allocation_size):
         # Create a new array with the indicated size
@@ -62,7 +70,7 @@ class ArrayList:
         # return the internal array
         return self.__array
 
-# additional ArrayList functions
+    # additional ArrayList functions
     def insert_after(self, index, new_item):
         # resize() if the array is full
         if self.allocation_size == self.__length:
@@ -88,18 +96,47 @@ class ArrayList:
             # If the current item matches the search
             # item, return the current index immediately.
             if self.__array[i] == item:
-                return i
+                return self.__array[i]
 
         # If the above loop finishes without returning,
         # it means the search item was not found.
-        return -1
+        return None
+
+    def search_sorted(self, item):
+        list = self.__array
+        n = self.__length      # n is the number of records in the list
+        first = 0
+        last = n - 1
+        middle = 0
+
+        # keep looking until we find the client or the first and last are flipped
+        while first <= last:
+            middle = int( (first + last) / 2 )
+            if list[middle] == item:
+                return list[middle]
+            else:
+                # move the end of list based on the middle number
+                if item < list[middle]:
+                    last = middle - 1
+                else:
+                    first = middle + 1
+
+        # if we get this far, we did not find the record
+        return None
 
     def remove(self, item):
-        # find the location of the item using search()
-        index = self.search(item)
+        # create a reference for the item
+        result = None
 
-        # remove the item based on the position
-        self.remove_at(index)
+        # Iterate through the entire array
+        for i in range(self.__length):
+            # If the current item matches the search
+            # item, return the current index immediately.
+            if self.__array[i] == item:
+                result = self.__array[i]
+
+        # return the item if found, otherwise, return nothing (None)
+        return result
 
     def clear_list(self):
         # clear the internal array using a default size

@@ -16,4 +16,4 @@ end_time = time.time()
 total_time = end_time - start_time
 
 # Show the result.  Note: .6f means “show six decimal places”
-print("\nSeconds run 1000 times: {:.6f}".format(total_time))
+print(f"\nIt took {total_time:.6f} seconds to run this program 1000 times!")
