@@ -23,7 +23,7 @@ class Stack:
         current = self.top
         while current is not None:
             output += f'{{ {current.value} }} -> '
-            current = current.next
+            current = current.next_node
         return output + '\nNONE\n'
 
     def is_empty(self) -> bool:
@@ -134,31 +134,31 @@ class Queue:
             raise EmptyException("Queue is empty!")
         return self.front.value
 
-new_node = Node(1)
+new_node = Node(0)
 
-# stack = Stack()
-# print(stack)
+stack = Stack()
+print(stack)
 
-# stack.push(2)
-# stack.push(1)
-# stack.push('TOP')
-# print(stack)
+stack.push(2)
+stack.push(1)
+stack.push('TOP')
+print(stack)
 
 # stack.pop()
 # stack.pop()
 # print(stack)
 
-queue = Queue()
-print(queue)
+# queue = Queue()
+# print(queue)
 
 
-queue.enqueue('FRONT')
-queue.enqueue(2)
-queue.enqueue(1)
-queue.enqueue('BACK')
-print(queue)
+# queue.enqueue('FRONT')
+# queue.enqueue(2)
+# queue.enqueue(1)
+# queue.enqueue('BACK')
+# # print(queue)
 
-queue.dequeue()
-print(queue)
+# # queue.dequeue()
+# print(queue)
 
-print(queue.peek())
+# print(queue.peek())
