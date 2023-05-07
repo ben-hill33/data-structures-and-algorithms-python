@@ -1,5 +1,5 @@
 # Name: Ben Hill
-# Date: 9/8/2022
+# Date: 5/6/2023
 
 from cgitb import small
 from ArrayList import ArrayList
@@ -12,7 +12,7 @@ import sys
 
 # display name and date in output
 print("Name: ", "Ben Hill")
-print("Name: ", date.today())
+print("Date: ", date.today())
 print()
 
 clients = []
