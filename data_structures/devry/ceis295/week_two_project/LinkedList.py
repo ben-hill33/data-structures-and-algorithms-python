@@ -1,5 +1,5 @@
 #Name: Ben Hill
-#Date: 9/18/2022
+#Date: 5/7/2023
 
 from Node import Node
 
@@ -12,18 +12,30 @@ class LinkedList:
         self.__tail = None
 
     def get_first(self):
+        """
+            Validates and returns data of head node.
+            Runtime: O(1)
+        """
         if self.__head != None:
             return self.__head.data
         else:
             return None
 
     def get_last(self):
+        """
+            Validates and returns data of tail node.
+            Runtime: O(1)
+        """
         if self.__tail != None:
             return self.__tail.data
         else:
             return None
 
     def get_at(self, index):
+        """
+            Traverse Linked List until desired location is found.
+            Runtime: O(n)
+        """
         if self.__head == None:
             return None
         else:
@@ -42,6 +54,10 @@ class LinkedList:
                 return temp.data
 
     def add_first(self, data):
+        """
+            Adds data to the head of the Linked List.
+            Runtime: O(1)
+        """
         # create a new node using the data
         new_node = Node(data)
 
@@ -54,6 +70,10 @@ class LinkedList:
             self.__head = new_node    # new_node becomes the head
 
     def add_last(self, data):
+        """
+            Adds data to the tail of the Linked List.
+            Runtime: O(1)
+        """
         # create a new node using the data
         new_node = Node(data)
 
@@ -66,6 +86,10 @@ class LinkedList:
             self.__tail = new_node     # new_node becomes the tail
 
     def add_at(self, index, data):
+        """
+            Traverse the Linked List to get to the point of insertion.
+            Runtime: O(n)
+        """
         # if index = 0, add to front
         if index == 0:
             self.add_first(data)
@@ -86,6 +110,10 @@ class LinkedList:
         temp.next = new_node
 
     def remove_first(self):
+        """
+            Removes data from the head of the Linked List.
+            Runtime: O(1)
+        """
         # Special case, empty list so nothing to remove
         if self.__head == None:
             return        # end the method
@@ -99,6 +127,10 @@ class LinkedList:
         self.__head = self.__head.next
 
     def remove_last(self):
+        """
+            Removes data from the tail of the Linked List.
+            Runtime: O(1)
+        """
         # Special case, empty list so nothing to remove
         if self.__head == None:
             return        # end the method
@@ -119,6 +151,11 @@ class LinkedList:
         temp.next = None
 
     def remove_at(self, index):
+        """
+            Traverse the Linked List to the node just before
+            the removal point.
+            Runtime: O(n)
+        """
         # Special case, empty list so nothing to remove
         if self.__head == None:
             return        # end the method
@@ -188,7 +225,6 @@ class LinkedList:
         # If the above loop finishes without returning,
         # it means the search item was not found.
         return None
-
 
     def is_empty(self):
         # if the head is empty, then the list is empty
