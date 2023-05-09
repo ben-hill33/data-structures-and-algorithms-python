@@ -51,7 +51,7 @@ for i in range(num_records):
 
 end_time = time.time()
 total_time = end_time - start_time
-print(f"\nIt took {total_time:.6f} seconds to add records!")
+print(f"\nSeconds to add records: {total_time:.6f}")
 
 # how long does it take to remove records from the front of the LinkedList?
 start_time = time.time()
@@ -61,7 +61,7 @@ for i in range(num_records):
 
 end_time = time.time()
 total_time = end_time - start_time
-print(f"\nIt took {total_time:.6f} seconds to remove records!")
+print(f"\nSeconds to remove records from front: {total_time:.6f}")
 
 
 # Scenario 2: Customer service center

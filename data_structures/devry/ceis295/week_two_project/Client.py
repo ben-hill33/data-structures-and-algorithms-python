@@ -1,5 +1,5 @@
 # Ben Hill
-# 9/18/2022
+# 5/8/2023
 
 class Client:
 
@@ -13,13 +13,13 @@ class Client:
     # classes that compare objects must use __eq__ and __lt__ methods
     def __lt__(self, other: object) -> bool:
         '''
-        __lt__ means "less than" and must return a boolean
+        __lt__ means "less than" and returns a boolean
         '''
         return self.__client_id < other.__client_id
 
     def __eq__(self, other: object) -> bool:
         '''
-        __eq__ means "equals" and must return a boolean
+        __eq__ means "equals" and returns a boolean
         '''
         return self.__client_id == other.__client_id
 

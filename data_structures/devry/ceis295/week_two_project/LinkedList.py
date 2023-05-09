@@ -116,7 +116,7 @@ class LinkedList:
         """
         # Special case, empty list so nothing to remove
         if self.__head == None:
-            return        # end the method
+            return
 
         # Special case, single node in the list
         if self.__head.next == None:
