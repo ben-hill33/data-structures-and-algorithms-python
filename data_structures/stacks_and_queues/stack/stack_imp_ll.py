@@ -4,6 +4,10 @@ class Node:
         self.next = None
 
 
+class InvalidOperationError(BaseException):
+    pass
+
+
 class Stack:
     def __init__(self, value):
         new_node = Node(value)
@@ -27,8 +31,24 @@ class Stack:
 
         self.height += 1
 
+    def pop(self):
+        if self.height == 0:
+            return None
 
-my_stack = Stack(1)
-my_stack.push(2)
+        temp = self.top
+        self.top = self.top.next
+        temp.next = None
+        self.height -= 1
+
+        return temp.value
+
+
+my_stack = Stack(4)
+my_stack.push(27)
+my_stack.push(22)
+my_stack.push(432)
+my_stack.push(345)
+
+print(my_stack.pop(), '\n')
 
 my_stack.print_stack()
