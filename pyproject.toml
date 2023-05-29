@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "python"
+name = "data structures"
 version = "0.1.0"
 description = ""
 authors = ["ben-hill33 <benjamin.hill28@gmail.com>"]
@@ -19,5 +19,5 @@ pytest = "^6.2.4"
 ipykernel = "^6.23.0"
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
+requires = ["poetry-core>=1.5.0"]
 build-backend = "poetry.core.masonry.api"
