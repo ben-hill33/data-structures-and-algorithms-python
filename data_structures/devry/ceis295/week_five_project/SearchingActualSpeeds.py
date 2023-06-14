@@ -68,3 +68,7 @@ for i in range(1000):
 end_time = time.time()
 total_time = end_time - start_time
 print(f"\nSeconds to search for 1000 {num_records} records: {total_time:.6f}\n")
+
+print("Name:", "Ben Hill")
+print("Date:", date.today())
+print()
